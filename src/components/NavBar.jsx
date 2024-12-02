@@ -40,7 +40,7 @@ const NavBar = () => {
         <h2 className='font-bold text-xl tracking-wider'>Exclusive</h2>
 
         <div className='hidden md:flex space-x-12'>
-          <Link className={`${nav === 'home' && 'underline'} font-semibold text-base`} to={'/home'} onClick={() => setNav('home')}>Home</Link>
+          <Link className={`${nav === 'home' && 'underline'} font-semibold text-base`} to={'/Home'} onClick={() => setNav('home')}>Home</Link>
           <Link className={`${nav === 'contact' && 'underline'} font-semibold text-base`} onClick={() => setNav('contact')}>Contact</Link>
           <Link className={`${nav === 'about' && 'underline'} font-semibold text-base`} onClick={() => setNav('about')}>About</Link>
           <Link className={`${nav === 'signUp' && 'underline'} font-semibold text-base`} onClick={() => setNav('signUp')}>Sign Up</Link>
@@ -60,7 +60,7 @@ const NavBar = () => {
       </div>
 
       <div className={`md:hidden ${iseMenuOpen ? 'block' : 'hidden'} flex flex-col items-center`}>
-        <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>Home</Link>
+        <Link className='block p-4' to={'/Home'} onClick={() => setIsMenuOpen(false)}>Home</Link>
         <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>Contact</Link>
         <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>About</Link>
         <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
