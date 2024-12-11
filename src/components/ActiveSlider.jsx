@@ -9,6 +9,7 @@ import 'swiper/css/free-mode';
 
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const ActiveSlider = () => {
 
@@ -17,8 +18,6 @@ const ActiveSlider = () => {
   useEffect(() => {
     getProducts()
   }, [])
-
-  console.log("products", products)
 
   const getProducts = async () => {
     try {
@@ -29,6 +28,10 @@ const ActiveSlider = () => {
     } catch (error) {
       console.log(error.message);
     }
+  }
+
+  const addToCart = async () => {
+    toast.success("Product added successfully")
   }
 
   return (
@@ -60,7 +63,7 @@ const ActiveSlider = () => {
       >
         {products?.map((prod, ind) => (
           <SwiperSlide key={ind} className="w-[700px] h-[700px] rounded overflow-hidden shadow-lg space-y-2 relative">
-          <div className='h-full w-full bg-gray-100'>
+          <div className='h-full w-full bg-gray-100 group'>
           <div className="space-y-2 flex flex-col items-end absolute top-4 right-4 z-50">
             <div className='bg-white rounded-full '>
             <CiHeart className='' />
@@ -75,13 +78,13 @@ const ActiveSlider = () => {
           />
           </div>
           </div>
-          <button className="text-white bg-black p-2 w-full rounded-sm font-semibold">
+          <button className="text-white bg-black p-2 w-full rounded-sm font-semibold" onClick={addToCart}>
             Add To Cart
           </button>
           <div className="px-6 py-4">
             <div className="text-base font-semibold mb-2 text-left">{prod.name}</div>
             <p className="text-orange-600 text-base text-left">
-              {prod.price}
+              ${prod.price}
             </p>
           </div>
         </SwiperSlide>

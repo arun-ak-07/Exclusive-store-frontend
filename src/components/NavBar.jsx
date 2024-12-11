@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
+import { FaRegHeart } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 const NavBar = () => {
   const [iseMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,16 +45,21 @@ const NavBar = () => {
           <Link className={`${nav === 'home' && 'underline'} font-semibold text-base`} to={'/Home'} onClick={() => setNav('home')}>Home</Link>
           <Link className={`${nav === 'contact' && 'underline'} font-semibold text-base`} onClick={() => setNav('contact')}>Contact</Link>
           <Link className={`${nav === 'about' && 'underline'} font-semibold text-base`} onClick={() => setNav('about')}>About</Link>
-          <Link className={`${nav === 'signUp' && 'underline'} font-semibold text-base`} onClick={() => setNav('signUp')}>Sign Up</Link>
+          <Link className={`${nav === 'signUp' && 'underline'} font-semibold text-base`} to={'/'} onClick={() => setNav('signUp')}>Sign Up</Link>
         </div>
 
+        <div className='flex flex-row justify-center items-center space-x-6 '>
         <div className='hidden md:flex bg-slate-100 px-4 py-2 rounded-full items-center'>
           <input 
             type="text" 
             placeholder='What are you looking for?' 
             className='text-sm p-0 text-black outline-none w-full bg-transparent' 
           />
-          <CiSearch className='h-6 w-6 cursor-pointer text-gray-500' />
+          <CiSearch className='h-6 w-6 cursor-pointer font-bold ml-4' />
+          
+        </div>
+        <FaRegHeart className='size-5 cursor-pointer'/>
+        <MdOutlineShoppingCart className='size-6 cursor-pointer'/>
         </div>
 
         <CiSearch className='md:hidden h-7 w-7 cursor-pointer' onClick={toggleSearch} />
@@ -60,10 +67,10 @@ const NavBar = () => {
       </div>
 
       <div className={`md:hidden ${iseMenuOpen ? 'block' : 'hidden'} flex flex-col items-center`}>
-        <Link className='block p-4' to={'/Home'} onClick={() => setIsMenuOpen(false)}>Home</Link>
-        <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>Contact</Link>
-        <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>About</Link>
-        <Link className='block p-4' onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+        <Link className='block p-4 font-semibold' to={'/Home'} onClick={() => setIsMenuOpen(false)}>Home</Link>
+        <Link className='block p-4 font-semibold' onClick={() => setIsMenuOpen(false)}>Contact</Link>
+        <Link className='block p-4 font-semibold' onClick={() => setIsMenuOpen(false)}>About</Link>
+        <Link className='block p-4 font-semibold' to={'/'} onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
       </div>
 
       <div className={`md:hidden ${isSearch ? 'flex' : 'hidden'} flex-col items-center bg-gray-100 p-4`}>
