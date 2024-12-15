@@ -13,6 +13,10 @@ import "swiper/css/navigation";
 const CategorySlider = () => {
   return (
     <div className=" h-full w-full space-y-10">
+      <div className='w-full md:pl-40 pl-10 flex justify-left items-center space-x-4'>
+        <div className='bg-red-600 w-4 h-9 rounded-sm'></div>
+        <p className='text-red-600 font-semibold'>Categories</p>
+      </div>
         <div className="w-full md:pl-40 pl-6">
           <h2 className="text-black font-bold tracking-wider text-3xl">
             Browse By Category
@@ -46,7 +50,7 @@ const CategorySlider = () => {
           </div>
         </div>
 
-        <div className='md:hidden w-full px-4 pl-8'>
+        <div className='md:hidden w-full px-4 pl-4'>
             <Swiper
                 modules={[Pagination]}
                 spaceBetween={16}
@@ -56,38 +60,38 @@ const CategorySlider = () => {
             >
                 
                 <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <ImMobile className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <ImMobile className="size-8" />
               <p className="text-xs font-semibold">Phones</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <FaComputer className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <FaComputer className="size-8" />
               <p className="text-xs font-semibold">Computers</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <BsSmartwatch className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <BsSmartwatch className="size-8" />
               <p className="text-xs font-semibold">SmartWatches</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <FaCameraRetro className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <FaCameraRetro className="size-8" />
               <p className="text-xs font-semibold">Camera</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <LuHeadphones className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <LuHeadphones className="size-8" />
               <p className="text-xs font-semibold">Headphones</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="size-20 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
-              <SiYoutubegaming className="size-10" />
+            <div className="size-24 border border-black flex flex-col justify-evenly items-center hover:text-white hover:bg-red-500 hover:border-red-500 cursor-pointer">
+              <SiYoutubegaming className="size-8" />
               <p className="text-xs font-semibold">Gaming</p>
             </div>
           </SwiperSlide>

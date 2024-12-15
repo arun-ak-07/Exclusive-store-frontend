@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import mobile from '../assets/mobile.png'
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import { backendUrl } from '../../utils/api'
 
 const SignIn = () => {
 
@@ -30,7 +31,7 @@ const SignIn = () => {
       if (Object.keys(newErrors).length > 0) return;
 
       const response = await axios.post(
-        `http://localhost:8000/api/auth/signIn`,
+        `${backendUrl}/api/auth/signIn`,
         {
           email,
           password,

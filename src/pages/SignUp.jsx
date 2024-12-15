@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { valdiateSignUp } from "../utils/validation";
 import { PulseLoader } from "react-spinners"; 
+import { backendUrl } from "../../utils/api";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -32,7 +33,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/auth/signUp`,
+        `${backendUrl}/api/auth/signUp`,
         {
           name,
           email,

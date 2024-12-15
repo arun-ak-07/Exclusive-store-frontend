@@ -1,0 +1,1 @@
+export const backendUrl = `https://exclusive-store-backend.onrender.com`

@@ -9,6 +9,8 @@ import { RiCustomerServiceLine } from "react-icons/ri";
 import jbl from "../../assets/jbl.png";
 import NavBar from "../../components/NavBar";
 import CategorySlider from "./CategorySlider";
+import BestSellingProducts from "./BestSellingProducts";
+import ExploreProducts from "./ExploreProducts"
 
 
 
@@ -65,6 +67,10 @@ const Home = () => {
 
       <CategorySlider/>
 
+      {/* <hr className="w-[80%] mx-auto my-10" /> */}
+
+      <BestSellingProducts/>
+
       <div className="w-full h-full mt-20 md:px-40 px-2">
         <div className="h-full w-full flex flex-row bg-black justify-between md:py-20 py-4">
           <div className=" flex flex-col w-1/2 justify-center md:space-y-16 space-y-2 md:pl-20 pl-4">
@@ -88,6 +94,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <ExploreProducts/>
 
       <div className="h-full w-full flex md:flex-row flex-col justify-evenly items-center text-center p-10 md:px-32 px-0">
         <div className="flex flex-col items-center w-full m-8">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { FiSearch } from "react-icons/fi";
 
 const NavBar = () => {
   const [iseMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,14 +56,14 @@ const NavBar = () => {
             placeholder='What are you looking for?' 
             className='text-sm p-0 text-black outline-none w-full bg-transparent' 
           />
-          <CiSearch className='h-6 w-6 cursor-pointer font-bold ml-4' />
+          <FiSearch className='h-6 w-6 cursor-pointer font-bold ml-4' />
           
         </div>
         <FaRegHeart className='size-5 cursor-pointer'/>
         <MdOutlineShoppingCart className='size-6 cursor-pointer'/>
         </div>
 
-        <CiSearch className='md:hidden h-7 w-7 cursor-pointer' onClick={toggleSearch} />
+        <FiSearch  className='md:hidden h-6 w-6 cursor-pointer' onClick={toggleSearch} />
 
       </div>
 
