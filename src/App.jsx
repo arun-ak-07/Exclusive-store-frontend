@@ -5,6 +5,8 @@ import SignIn from './pages/SignIn'
 import { Toaster } from 'react-hot-toast'
 import Admin from './pages/admin/Admin'
 import Home from './pages/home/Home'
+import Cart from './pages/cart/Cart'
+import About from './pages/about/About'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
       <Route path='/Home' element={<Home/>} /> 
       <Route path='/SignIn' element={<SignIn/>} />
       <Route path='/Admin' element={<Admin/>} />
+      <Route path='/Cart' element={<Cart/>} />
+      <Route path='/About' element={<About/>} />
       </Routes>
     </BrowserRouter>
     </>

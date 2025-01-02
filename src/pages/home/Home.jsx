@@ -1,20 +1,46 @@
-import React from "react";
-import Footer from "../../components/Footer";
-import iphone from "../../assets/iphoneImage.png";
-import { HiArrowSmallRight } from "react-icons/hi2";
-import { FaApple } from "react-icons/fa";
-import ActiveSlider from "../../components/ActiveSlider";
+import React, {useState, useEffect} from "react";
 import { FaTruckFast } from "react-icons/fa6";
 import { RiCustomerServiceLine } from "react-icons/ri";
+import { FaApple } from "react-icons/fa";
+import { HiArrowSmallRight } from "react-icons/hi2";
+import axios from "axios";
+
+import Footer from "../../components/Footer";
+import ActiveSlider from "../../components/ActiveSlider";
+import iphone from "../../assets/iphoneImage.png";
 import jbl from "../../assets/jbl.png";
 import NavBar from "../../components/NavBar";
 import CategorySlider from "./CategorySlider";
 import BestSellingProducts from "./BestSellingProducts";
 import ExploreProducts from "./ExploreProducts"
-
-
+import { backendUrl } from "../../../utils/api";
+import Spinner from "../../components/Spinner";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    getProducts()
+  }, [])
+
+  const getProducts = async () => {
+    try {
+      
+      const response = await axios.get(`${backendUrl}/api/products/getProducts`)
+      setProducts(response.data.products)
+
+    } catch (error) {
+      console.log(error.message);
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  if(loading){
+    return <Spinner loading={loading} />
+  }
+
   return (
     <div>
       <NavBar/>

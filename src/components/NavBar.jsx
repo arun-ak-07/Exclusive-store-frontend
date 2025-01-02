@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -9,6 +9,8 @@ const NavBar = () => {
   const [iseMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [nav, setNav] = useState('home');
+
+  const navigate = useNavigate()
 
   const toggleMenu = () => setIsMenuOpen(!iseMenuOpen);
   const toggleSearch = () => setIsSearch(!isSearch);
@@ -45,7 +47,7 @@ const NavBar = () => {
         <div className='hidden md:flex space-x-12'>
           <Link className={`${nav === 'home' && 'underline'} font-semibold text-base`} to={'/Home'} onClick={() => setNav('home')}>Home</Link>
           <Link className={`${nav === 'contact' && 'underline'} font-semibold text-base`} onClick={() => setNav('contact')}>Contact</Link>
-          <Link className={`${nav === 'about' && 'underline'} font-semibold text-base`} onClick={() => setNav('about')}>About</Link>
+          <Link className={`${nav === 'about' && 'underline'} font-semibold text-base`} to={'/About'} onClick={() => setNav('about')}>About</Link>
           <Link className={`${nav === 'signUp' && 'underline'} font-semibold text-base`} to={'/'} onClick={() => setNav('signUp')}>Sign Up</Link>
         </div>
 
@@ -60,7 +62,7 @@ const NavBar = () => {
           
         </div>
         <FaRegHeart className='size-5 cursor-pointer'/>
-        <MdOutlineShoppingCart className='size-6 cursor-pointer'/>
+        <MdOutlineShoppingCart onClick={()=>navigate('/Cart')} className='size-6 cursor-pointer'/>
         </div>
 
         <FiSearch  className='md:hidden h-6 w-6 cursor-pointer' onClick={toggleSearch} />
@@ -70,7 +72,7 @@ const NavBar = () => {
       <div className={`md:hidden ${iseMenuOpen ? 'block' : 'hidden'} flex flex-col items-center`}>
         <Link className='block p-4 font-semibold' to={'/Home'} onClick={() => setIsMenuOpen(false)}>Home</Link>
         <Link className='block p-4 font-semibold' onClick={() => setIsMenuOpen(false)}>Contact</Link>
-        <Link className='block p-4 font-semibold' onClick={() => setIsMenuOpen(false)}>About</Link>
+        <Link className='block p-4 font-semibold' to={'/About'} onClick={() => setIsMenuOpen(false)}>About</Link>
         <Link className='block p-4 font-semibold' to={'/'} onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
       </div>
 

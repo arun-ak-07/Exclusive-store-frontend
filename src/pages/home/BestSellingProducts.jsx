@@ -6,7 +6,7 @@ import { backendUrl } from '../../../utils/api'
 
 
 const BestSellingProducts = () => {
-  const [products, setProducts] = useState([]) // Default to empty array
+  const [products, setProducts] = useState([])
   
   useEffect(() => {
     getProducts()
